@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr.formakorisnici;
+package ba.unsa.etf.rpr;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

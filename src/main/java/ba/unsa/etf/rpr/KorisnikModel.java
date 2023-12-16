@@ -1,8 +1,6 @@
-package ba.unsa.etf.rpr.formakorisnici;
+package ba.unsa.etf.rpr;
 
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -35,4 +33,5 @@ public class KorisnikModel {
         korisnici.add(noviKorisnik);
         setTrenutniKorisnik(noviKorisnik);
     }
+
 }

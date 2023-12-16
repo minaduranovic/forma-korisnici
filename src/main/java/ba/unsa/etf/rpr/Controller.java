@@ -1,10 +1,8 @@
-package ba.unsa.etf.rpr.formakorisnici;
+package ba.unsa.etf.rpr;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.TextFieldListCell;
-import javafx.util.StringConverter;
-import javafx.util.converter.DefaultStringConverter;
 
 public class Controller {
     public ListView listKorisnici= new ListView();
@@ -44,11 +42,15 @@ public class Controller {
             }
         });
     }
-    private void dodajKorisnika() {
+    @FXML
+    private void dodajBtn(ActionEvent event){
         model.dodajPraznogKorisnika();
+        listKorisnici.getSelectionModel().selectLast();
+
     }
 
-    private void zavrsiProgram() {
+    @FXML
+    private void krajBtn(ActionEvent event) {
         System.exit(0);
     }
 

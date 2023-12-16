@@ -10,7 +10,8 @@ module ba.unsa.etf.rpr.formakorisnici {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires javafx.swing;
 
-    opens ba.unsa.etf.rpr.formakorisnici to javafx.fxml;
-    exports ba.unsa.etf.rpr.formakorisnici;
+    opens ba.unsa.etf.rpr to javafx.fxml;
+    exports ba.unsa.etf.rpr;
 }
