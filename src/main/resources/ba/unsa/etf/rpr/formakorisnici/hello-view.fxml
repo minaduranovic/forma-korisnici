@@ -11,11 +11,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import java.lang.String?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="762.0" style="-fx-background-color: #497244;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.formakorisnici.Controller">
-      <HBox layoutX="27.0" layoutY="31.0" prefHeight="358.0" prefWidth="714.0">
+<?import javafx.scene.control.PasswordField?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="641.0" style="-fx-background-color: #85c285;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.formakorisnici.Controller">
+      <HBox layoutX="27.0" layoutY="31.0" prefHeight="358.0" prefWidth="605.0">
          <children>
-            <ListView fx:id="listKorisnici" blendMode="LIGHTEN" prefHeight="278.0" prefWidth="340.0" style="-fx-background-color: #e6f8fa; -fx-border-color: black; -fx-text-fill: black;">
+            <ListView fx:id="listKorisnici" blendMode="LIGHTEN" cache="true" prefHeight="278.0" prefWidth="238.0" style="-fx-background-color: #ffffff; -fx-border-color: black;">
                <padding>
                   <Insets bottom="20.0" left="20.0" right="30.0" />
                </padding>
@@ -25,7 +25,6 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
-
             </ListView>
             <VBox prefHeight="357.0" prefWidth="341.0">
                <children>
@@ -39,7 +38,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="fldIme" promptText="Mina" translateY="5.0" />
+                        <TextField fx:id="fldIme" translateY="5.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="43.0" prefWidth="300.0" spacing="70.0">
@@ -52,7 +51,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="fldPrezime" promptText="Duranovic" translateY="5.0" />
+                        <TextField fx:id="fldPrezime" translateY="5.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="43.0" prefWidth="300.0" spacing="85.0" translateY="5.0">
@@ -65,7 +64,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="fldEmail" promptText="minad@gmail.com" />
+                        <TextField fx:id="fldEmail" />
                      </children>
                   </HBox>
                   <HBox prefHeight="43.0" prefWidth="359.0" spacing="10.0">
@@ -78,7 +77,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="fldKorisnickoIme" promptText="mduranovic" translateY="5.0" />
+                        <TextField fx:id="fldKorisnickoIme" translateY="5.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="43.0" prefWidth="300.0" spacing="74.0">
@@ -91,17 +90,20 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="fldLozinka" promptText="Md2007@" translateY="5.0" />
+                        <PasswordField fx:id="fldLozinka" translateY="5.0" />
                      </children>
                   </HBox>
                   <ButtonBar prefHeight="61.0" prefWidth="100.0" translateX="-50.0" VBox.vgrow="ALWAYS">
                     <buttons>
-                        <Button fx:id="dodajBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="134.0" style="-fx-background-color: #d7dbdb; -fx-text-fill: black;" text="Dodaj" translateX="-20.0">
+                        <Button fx:id="dodajBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="134.0" style="-fx-background-color: #d7dbdb; -fx-text-fill: black;" text="Dodaj" textAlignment="CENTER" translateX="-20.0">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Button>
-                      <Button fx:id="krajBtn" mnemonicParsing="false" style="-fx-background-color: #d7dbdb; -fx-text-fill: black;" text="Kraj" />
+                      <Button fx:id="krajBtn" mnemonicParsing="false" style="-fx-background-color: #d7dbdb; -fx-text-fill: black;" text="Kraj" textAlignment="CENTER">
+                        <font>
+                           <Font name="System Bold" size="13.0" />
+                        </font></Button>
                     </buttons>
                      <VBox.margin>
                         <Insets bottom="15.0" left="100.0" right="15.0" top="22.0" />

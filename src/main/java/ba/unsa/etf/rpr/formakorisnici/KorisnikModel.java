@@ -24,9 +24,10 @@ public class KorisnikModel {
 
     public void napuni() {
         korisnici.add(new Korisnik("Mina", "Duranovic", "minad@email.com", "mduranovic2", "rpr123"));
-        korisnici.add(new Korisnik("Ajna", "Duranovic", "ajnade@email.com", "aduranovic1", "rpr456"));
-        korisnici.add(new Korisnik("Sara", "Dautbegovic", "sarad@gmail.com", "sdautbegovic1", "rpr111"));
-        trenutni.set(null);
+        korisnici.add(new Korisnik("Sara", "Dautbegovic", "sarad@gmail.com", "sdautbegovic1", "r111"));
+        korisnici.add(new Korisnik("Ajna", "Duranovic", "ajnad@email.com", "aduranovic2", "aaaaaaaaaaa"));
+
+        trenutni.set(korisnici.get(0));
     }
 
     public void dodajPraznogKorisnika() {
