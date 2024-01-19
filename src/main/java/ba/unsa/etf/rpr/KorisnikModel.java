@@ -5,8 +5,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class KorisnikModel {
-    private ObservableList<Korisnik> korisnici=FXCollections.observableArrayList();
-    private SimpleObjectProperty<Korisnik> trenutni= new SimpleObjectProperty();
+    private ObservableList<Korisnik> korisnici = FXCollections.observableArrayList();
+    private SimpleObjectProperty<Korisnik> trenutni = new SimpleObjectProperty();
 
     public ObservableList<Korisnik> getKorisnici() {
         return korisnici;

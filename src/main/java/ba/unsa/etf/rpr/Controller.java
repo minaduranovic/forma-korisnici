@@ -6,7 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 public class Controller {
-    public ListView<Korisnik> listKorisnici= new ListView();
+    public ListView<Korisnik> listKorisnici = new ListView();
     public TextField fldIme;
 
     public TextField fldPrezime;
@@ -16,7 +16,7 @@ public class Controller {
     public Button dodajBtn;
     public Button krajBtn;
 
-    private KorisnikModel model= new KorisnikModel();
+    private KorisnikModel model = new KorisnikModel();
 
 
     @FXML
@@ -29,7 +29,7 @@ public class Controller {
         listKorisnici.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldUser, newUser) -> {
             if (oldUser != null) {
                 fldIme.textProperty().unbindBidirectional(oldUser.imeProperty());
-               fldPrezime.textProperty().unbindBidirectional(oldUser.prezimeProperty());
+                fldPrezime.textProperty().unbindBidirectional(oldUser.prezimeProperty());
                 fldEmail.textProperty().unbindBidirectional(oldUser.emailProperty());
                 fldKorisnickoIme.textProperty().unbindBidirectional(oldUser.korisnickoImeProperty());
                 fldLozinka.textProperty().unbindBidirectional(oldUser.lozinkaProperty());
@@ -54,11 +54,11 @@ public class Controller {
             listKorisnici.refresh();
 
         }));
-            listKorisnici.getSelectionModel().selectFirst();
+        listKorisnici.getSelectionModel().selectFirst();
     }
 
     @FXML
-    private void dodajBtn(ActionEvent event){
+    private void dodajBtn(ActionEvent event) {
         model.dodajPraznogKorisnika();
         listKorisnici.getSelectionModel().selectLast();
 

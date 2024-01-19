@@ -1,4 +1,4 @@
-module ba.unsa.etf.rpr.formakorisnici {
+module ba.unsa.etf.rpr {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;

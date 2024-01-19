@@ -89,8 +89,8 @@ public class Korisnik {
     @Override
     public String toString() {
         return "Korisnik " +
-                  ime.get() +
-                " " + prezime.get() ;
+                ime.get() +
+                " " + prezime.get();
     }
 }
 
