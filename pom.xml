@@ -94,11 +94,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>eu.hansolo.fx</groupId>
-            <artifactId>heatmap</artifactId>
-            <version>17.0.12</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.openjfx</groupId>

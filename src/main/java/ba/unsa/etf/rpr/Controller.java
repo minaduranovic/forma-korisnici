@@ -3,9 +3,10 @@ package ba.unsa.etf.rpr;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
 public class Controller {
-    public ListView listKorisnici= new ListView();
+    public ListView<Korisnik> listKorisnici= new ListView();
     public TextField fldIme;
 
     public TextField fldPrezime;
@@ -22,26 +23,40 @@ public class Controller {
     public void initialize() {
         model.napuni();
         listKorisnici.setItems(model.getKorisnici());
+        fldKorisnickoIme.textProperty().addListener((observableValue) -> listKorisnici.refresh());
 
-        listKorisnici.getSelectionModel().selectedItemProperty().addListener((obs, oldKorisnik, newKorisnik) -> {
-            if (newKorisnik != null) {
-                fldIme.textProperty().unbindBidirectional(model.getTrenutniKorisnik().get().imeProperty());
-                fldPrezime.textProperty().unbindBidirectional(model.getTrenutniKorisnik().get().prezimeProperty());
-                fldEmail.textProperty().unbindBidirectional(model.getTrenutniKorisnik().get().emailProperty());
-                fldKorisnickoIme.textProperty().unbindBidirectional(model.getTrenutniKorisnik().get().korisnickoImeProperty());
-                fldLozinka.textProperty().unbindBidirectional(model.getTrenutniKorisnik().get().lozinkaProperty());
 
-                model.setTrenutniKorisnik((Korisnik) newKorisnik);
-
-                fldIme.textProperty().bindBidirectional(model.getTrenutniKorisnik().get().imeProperty());
-                fldPrezime.textProperty().bindBidirectional(model.getTrenutniKorisnik().get().prezimeProperty());
-                fldEmail.textProperty().bindBidirectional(model.getTrenutniKorisnik().get().emailProperty());
-                fldKorisnickoIme.textProperty().bindBidirectional(model.getTrenutniKorisnik().get().korisnickoImeProperty());
-                fldLozinka.textProperty().bindBidirectional(model.getTrenutniKorisnik().get().lozinkaProperty());
-                listKorisnici.refresh();
+        listKorisnici.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldUser, newUser) -> {
+            if (oldUser != null) {
+                fldIme.textProperty().unbindBidirectional(oldUser.imeProperty());
+               fldPrezime.textProperty().unbindBidirectional(oldUser.prezimeProperty());
+                fldEmail.textProperty().unbindBidirectional(oldUser.emailProperty());
+                fldKorisnickoIme.textProperty().unbindBidirectional(oldUser.korisnickoImeProperty());
+                fldLozinka.textProperty().unbindBidirectional(oldUser.lozinkaProperty());
             }
-        });
+
+            model.setTrenutniKorisnik(newUser);
+
+            if (newUser == null) {
+                fldIme.setText("");
+                fldPrezime.setText("");
+                fldEmail.setText("");
+                fldKorisnickoIme.setText("");
+                fldLozinka.setText("");
+            } else {
+                fldIme.textProperty().bindBidirectional(newUser.imeProperty());
+                fldPrezime.textProperty().bindBidirectional(newUser.prezimeProperty());
+                fldEmail.textProperty().bindBidirectional(newUser.emailProperty());
+                fldKorisnickoIme.textProperty().bindBidirectional(newUser.korisnickoImeProperty());
+                fldLozinka.textProperty().bindBidirectional(newUser.lozinkaProperty());
+            }
+
+            listKorisnici.refresh();
+
+        }));
+            listKorisnici.getSelectionModel().selectFirst();
     }
+
     @FXML
     private void dodajBtn(ActionEvent event){
         model.dodajPraznogKorisnika();
@@ -54,7 +69,11 @@ public class Controller {
         System.exit(0);
     }
 
+    public void handleMouseClick(MouseEvent mouseEvent) {
+        model.setTrenutniKorisnik((Korisnik) listKorisnici.getSelectionModel().getSelectedItems());
     }
+}
+
 
 
 
